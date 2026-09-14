@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<addons>
+  <addon id="repository.sportsurge" name="Sportsurge Repository" version="1.0.0" provider-name="Jay181020">
+    <extension point="xbmc.addon.repository" name="Sportsurge Repository">
+      <dir>
+        <info compressed="false">https://raw.githubusercontent.com/Jay181020/repository.sportsurge/main/repo/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/Jay181020/repository.sportsurge/main/repo/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/Jay181020/repository.sportsurge/main/repo/zips/</datadir>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>Sportsurge Kodi Repository</summary>
+      <description>Official repository for Sportsurge live sports video add-on, featuring multi-tier stream resolvers and 200+ live matches daily.</description>
+      <disclaimer>Sportsurge streams live events from public third-party sources.</disclaimer>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="plugin.video.sportsurge" name="Sportsurge" version="1.0.0" provider-name="Community">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" version="2.25.0" />
+      <import addon="script.module.beautifulsoup4" version="4.9.3" />
+      <import addon="script.module.inputstreamhelper" version="0.5.0" optional="true" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Watch live sports streams from Sportsurge</summary>
+      <description lang="en_GB">Kodi add-on for Sportsurge (v2.sportsurge.net). Browse live sports including Football (NFL, CFB), Basketball (NBA), Baseball (MLB), Hockey (NHL), MMA, Boxing, Soccer, and Motor Sports with multi-host stream resolution.</description>
+      <disclaimer lang="en_GB">This add-on does not host or distribute any video content. It merely parses publicly accessible web links.</disclaimer>
+      <language>en</language>
+      <platform>all</platform>
+      <license>GPL-3.0-or-later</license>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+    </extension>
+  </addon>
+</addons>

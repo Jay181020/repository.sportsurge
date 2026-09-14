@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.sportsurge"
        name="Sportsurge"
-       version="1.0.0"
+       version="1.2.0"
        provider-name="Community">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.25.0"/>
         <import addon="script.module.beautifulsoup4" version="4.9.3"/>
         <import addon="script.module.inputstreamhelper" version="0.5.0" optional="true"/>
+        <import addon="script.module.resolveurl" version="5.0.0" optional="true"/>
+        <import addon="script.module.acctmgr" version="1.0.0" optional="true"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="main.py">
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="en_GB">Watch live sports streams from Sportsurge</summary>
-        <description lang="en_GB">Kodi add-on for Sportsurge (v2.sportsurge.net). Browse live sports including Football (NFL, CFB), Basketball (NBA), Baseball (MLB), Hockey (NHL), MMA, Boxing, Soccer, and Motor Sports with multi-host stream resolution.</description>
+        <summary lang="en_GB">Watch live sports, 24/7 channels, and replays from Sportsurge</summary>
+        <description lang="en_GB">Kodi add-on for Sportsurge (v2.sportsurge.net). Features 24/7 live TV networks (ESPN, Sky Sports, TNT, FS1, TSN), full match replays with Real-Debrid and AllDebrid integration, smart auto-play, and multi-tier stream resolution.</description>
         <disclaimer lang="en_GB">This add-on does not host or distribute any video content. It merely parses publicly accessible web links.</disclaimer>
         <language>en</language>
         <platform>all</platform>

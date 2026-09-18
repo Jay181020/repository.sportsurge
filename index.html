@@ -1,14 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sportsurge Kodi Repository</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            padding: 30px 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 720px;
+            width: 100%;
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border: 1px solid #334155;
+        }
+        h1 {
+            margin-top: 0;
+            color: #38bdf8;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        p {
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        .file-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .file-list li {
+            background: #0f172a;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            transition: border-color 0.2s;
+        }
+        .file-list li:hover {
+            border-color: #38bdf8;
+        }
+        .file-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            color: #f1f5f9;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .badge {
+            background: #0284c7;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .badge-green {
+            background: #16a34a;
+        }
+        .instructions {
+            background: #0f172a;
+            border-left: 4px solid #38bdf8;
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 24px;
+        }
+        .instructions h3 {
+            margin-top: 0;
+            color: #f8fafc;
+            font-size: 1rem;
+        }
+        .instructions ol {
+            margin: 0;
+            padding-left: 20px;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        .instructions code {
+            background: #1e293b;
+            color: #38bdf8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
-    <h2>Sportsurge Kodi Repository</h2>
-    <ul>
-        <li><a href="repository.sportsurge-1.0.0.zip">repository.sportsurge-1.0.0.zip</a></li>
-        <li><a href="repo/zips/plugin.video.sportsurge/plugin.video.sportsurge-1.0.0.zip">plugin.video.sportsurge-1.0.0.zip</a></li>
-    </ul>
+    <div class="container">
+        <h1>🏈 Sportsurge Kodi Repository</h1>
+        <p>Live repository files for automated add-on installation and background updates across Kodi 19 Matrix, Kodi 20 Nexus, and Kodi 21 Omega.</p>
+        
+        <ul class="file-list">
+            <li>
+                <a href="repository.sportsurge-1.0.0.zip">
+                    <span>📦 repository.sportsurge-1.0.0.zip</span>
+                    <span class="badge">Repository Installer</span>
+                </a>
+            </li>
+            <li>
+                <a href="plugin.video.sportsurge-1.3.0.zip">
+                    <span>⚡ plugin.video.sportsurge-1.3.0.zip</span>
+                    <span class="badge badge-green">v1.3.0 Latest</span>
+                </a>
+            </li>
+            <li>
+                <a href="repo/zips/plugin.video.sportsurge/plugin.video.sportsurge-1.3.0.zip">
+                    <span>📁 repo/zips/plugin.video.sportsurge/plugin.video.sportsurge-1.3.0.zip</span>
+                </a>
+            </li>
+            <li>
+                <a href="repo/addons.xml">
+                    <span>📋 repo/addons.xml</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="instructions">
+            <h3>📲 How to Add in Kodi File Manager:</h3>
+            <ol>
+                <li>In Kodi, open <strong>Settings (Gear)</strong> &gt; <strong>File Manager</strong> &gt; <strong>Add source</strong>.</li>
+                <li>Enter the URL: <code>https://jay181020.github.io/repository.sportsurge/</code></li>
+                <li>Name the media source: <strong>Sportsurge</strong> and click <strong>OK</strong>.</li>
+                <li>Go back to <strong>Settings</strong> &gt; <strong>Add-ons</strong> &gt; <strong>Install from zip file</strong> &gt; select <strong>Sportsurge</strong> &gt; click <code>repository.sportsurge-1.0.0.zip</code>.</li>
+            </ol>
+        </div>
+    </div>
 </body>
 </html>

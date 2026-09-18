@@ -19,7 +19,7 @@
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.sportsurge" name="Sportsurge" version="1.2.3" provider-name="Community">
+  <addon id="plugin.video.sportsurge" name="Sportsurge" version="1.2.4" provider-name="Community">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
       <import addon="script.module.requests" version="2.25.0" />
@@ -31,9 +31,10 @@
     <extension point="xbmc.python.pluginsource" library="main.py">
       <provides>video</provides>
     </extension>
+    <extension point="xbmc.service" library="service.py" start="startup" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en_GB">Watch live sports, 24/7 channels, and replays from Sportsurge &amp; StreamEast</summary>
-      <description lang="en_GB">Kodi add-on for Sportsurge &amp; StreamEast. Features 24/7 live TV networks, full match replays with Real-Debrid / AllDebrid, StreamEast multi-source fallback (1080p 60fps), smart auto-play with live health check, and multi-tier stream resolution.</description>
+      <description lang="en_GB">Kodi add-on for Sportsurge &amp; StreamEast. Features auto-updates on Kodi startup, 24/7 live TV networks, full match replays with Real-Debrid / AllDebrid, StreamEast multi-source fallback (1080p 60fps), smart auto-play with preferred host selection, and real-time live game status verification.</description>
       <disclaimer lang="en_GB">This add-on does not host or distribute any video content. It merely parses publicly accessible web links.</disclaimer>
       <language>en</language>
       <platform>all</platform>
@@ -42,6 +43,12 @@
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
       </assets>
+      <news>v1.2.4:
+- Real-time match start status and timezone fix (ongoing games correctly show LIVE NOW).
+- Auto-update background service on Kodi startup.
+- What's New patch notes dialog.
+- Auto-Play preferred host selection and scoring.
+        </news>
     </extension>
   </addon>
 </addons>

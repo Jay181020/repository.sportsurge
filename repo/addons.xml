@@ -19,7 +19,7 @@
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.sportsurge" name="Sportsurge" version="1.2.4" provider-name="Community">
+  <addon id="plugin.video.sportsurge" name="Sportsurge" version="1.3.0" provider-name="Community">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
       <import addon="script.module.requests" version="2.25.0" />
@@ -34,7 +34,7 @@
     <extension point="xbmc.service" library="service.py" start="startup" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en_GB">Watch live sports, 24/7 channels, and replays from Sportsurge &amp; StreamEast</summary>
-      <description lang="en_GB">Kodi add-on for Sportsurge &amp; StreamEast. Features auto-updates on Kodi startup, 24/7 live TV networks, full match replays with Real-Debrid / AllDebrid, StreamEast multi-source fallback (1080p 60fps), smart auto-play with preferred host selection, and real-time live game status verification.</description>
+      <description lang="en_GB">Kodi add-on for Sportsurge &amp; StreamEast. Features high-res visual category art, dedicated LIVE NOW section, league sub-filters (NFL, NBA, EPL, F1), one-click Kodi 21 buffer optimizer, quick channel zapping &amp; multi-game switcher, auto-updates on Kodi startup, 24/7 live TV networks, full match replays with Real-Debrid / AllDebrid, StreamEast multi-source fallback (1080p 60fps), and smart auto-play with preferred host selection.</description>
       <disclaimer lang="en_GB">This add-on does not host or distribute any video content. It merely parses publicly accessible web links.</disclaimer>
       <language>en</language>
       <platform>all</platform>
@@ -43,11 +43,13 @@
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
       </assets>
-      <news>v1.2.4:
-- Real-time match start status and timezone fix (ongoing games correctly show LIVE NOW).
-- Auto-update background service on Kodi startup.
-- What's New patch notes dialog.
-- Auto-Play preferred host selection and scoring.
+      <news>v1.3.0:
+- Custom 512x512 visual artwork &amp; icons for Wall, Poster, and Card view modes.
+- Dedicated "LIVE NOW (Happening Right Now)" top-level section.
+- League &amp; competition sub-filters (NFL, CFB, NBA, WNBA, NCAAB, EPL, UCL, La Liga, MLS, F1, NASCAR, MotoGP).
+- One-Click Buffer &amp; Speed Optimizer tool for Kodi 21 (Firestick 128MB vs PC/Shield 256MB).
+- Quick Channel Zapping &amp; Multi-Game Switching (remote Next/Prev buttons cycle live matches).
+- Combined one-time welcome greeting and patch notes screen.
         </news>
     </extension>
   </addon>

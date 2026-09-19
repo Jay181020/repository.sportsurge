@@ -5,6 +5,7 @@ Builds addons.xml, addons.xml.md5, and packages zip archives for the repository.
 """
 
 import os
+import sys
 import shutil
 import hashlib
 import zipfile
@@ -100,6 +101,22 @@ def generate_repo():
     with open(addons_md5_path, 'w', encoding='utf-8') as f:
         f.write(md5_hash)
     print(f"Generated: {addons_md5_path} (MD5: {md5_hash})")
+
+    # Generate sportsurge.m3u playlist in REPO_ROOT
+    try:
+        plugin_lib = os.path.abspath(os.path.join(REPO_ROOT, '..', 'plugin.video.sportsurge', 'resources', 'lib'))
+        if plugin_lib not in sys.path:
+            sys.path.insert(0, plugin_lib)
+        import iptv_server
+        m3u_file = os.path.join(REPO_ROOT, 'sportsurge.m3u')
+        started, srv_url = iptv_server.start_iptv_server(port=8899)
+        if started:
+            succ, count, err = iptv_server.export_m3u_file(m3u_file, server_url=srv_url)
+            iptv_server.stop_iptv_server()
+            if succ:
+                print(f"Generated: {m3u_file} ({count} channels)")
+    except Exception as e:
+        print(f"Warning: Could not export sportsurge.m3u: {e}")
 
     # Generate root index.html matching Kodi HTTPDirectory.cpp regexes
     index_html_path = os.path.join(REPO_ROOT, 'index.html')
@@ -201,9 +218,10 @@ def generate_repo():
         <table>
             <tr><th>Name</th><th style="text-align:right">Last modified</th><th style="text-align:right">Size</th></tr>
             <tr><th colspan="3"><hr style="border:0;border-top:1px solid #334155;margin:0;"></th></tr>
-            <tr><td><a href="repository.sportsurge-1.0.0.zip">repository.sportsurge-1.0.0.zip</a></td><td align="right">2026-09-18 18:00  </td><td align="right"> 80K</td></tr>
-            <tr><td><a href="plugin.video.sportsurge-1.3.0.zip">plugin.video.sportsurge-1.3.0.zip</a></td><td align="right">2026-09-18 18:00  </td><td align="right">450K</td></tr>
-            <tr><td><a href="repo/">repo/</a></td><td align="right">2026-09-18 18:00  </td><td align="right">  - </td></tr>
+            <tr><td><a href="repository.sportsurge-1.0.0.zip">repository.sportsurge-1.0.0.zip</a></td><td align="right">2026-09-18 19:30  </td><td align="right"> 80K</td></tr>
+            <tr><td><a href="plugin.video.sportsurge-1.4.0.zip">plugin.video.sportsurge-1.4.0.zip</a></td><td align="right">2026-09-18 19:30  </td><td align="right">460K</td></tr>
+            <tr><td><a href="sportsurge.m3u">sportsurge.m3u</a></td><td align="right">2026-09-18 19:30  </td><td align="right"> 40K</td></tr>
+            <tr><td><a href="repo/">repo/</a></td><td align="right">2026-09-18 19:30  </td><td align="right">  - </td></tr>
             <tr><th colspan="3"><hr style="border:0;border-top:1px solid #334155;margin:0;"></th></tr>
         </table>
 
@@ -216,6 +234,17 @@ def generate_repo():
                 <li>Go back to <strong>Settings</strong> &gt; <strong>Add-ons</strong> &gt; <strong>Install from zip file</strong> &gt; select <strong>Sportsurge</strong> &gt; click <code>repository.sportsurge-1.0.0.zip</code>.</li>
             </ol>
         </div>
+
+        <div class="instructions" style="border-left-color: #22c55e; margin-top: 16px;">
+            <h3 style="color: #22c55e;">📺 TiviMate Multi-View (Split-Screen & Quad-Box) Setup:</h3>
+            <ol>
+                <li>In TiviMate, go to <strong>Settings</strong> &gt; <strong>Playlists</strong> &gt; <strong>Add playlist</strong> &gt; <strong>M3U playlist</strong>.</li>
+                <li>Enter URL: <code>http://127.0.0.1:8899/playlist.m3u</code> (or cloud URL: <code>https://jay181020.github.io/repository.sportsurge/sportsurge.m3u</code>).</li>
+                <li>Play any channel full screen, then <strong>press &amp; hold Select/OK</strong> on your remote.</li>
+                <li>Select the <strong>Multi-View</strong> grid icon &gt; <strong>Add Screen</strong> to watch 2, 3, or 4 games at once!</li>
+                <li>Use <strong>D-Pad arrows</strong> to switch game audio instantly.</li>
+            </ol>
+        </div>
     </div>
 </body>
 </html>
@@ -223,6 +252,7 @@ def generate_repo():
     with open(index_html_path, 'w', encoding='utf-8') as f:
         f.write(html_content)
     print(f"Generated: {index_html_path}")
+
 
     # Also generate repo/index.html
     repo_html_path = os.path.join(REPO_DIR, 'index.html')
